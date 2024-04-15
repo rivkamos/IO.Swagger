@@ -48,7 +48,7 @@ namespace IO.Swagger.Security
             var claims = new[] {
                 new Claim(ClaimTypes.NameIdentifier, "changeme"),
                 new Claim(ClaimTypes.Name, "changeme"),
-                new Claim(ClaimTypes.Expired, DateTime.Now.AddMinutes(1).ToString()),//Add token time expiration
+                new Claim(ClaimTypes.Expired, DateTime.Now.AddMinutes(5).ToLongTimeString()),//Add token time expiration
             };
             var identity = new ClaimsIdentity(claims, Scheme.Name);
             var principal = new ClaimsPrincipal(identity);
